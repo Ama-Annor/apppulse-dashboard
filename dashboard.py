@@ -96,8 +96,10 @@ st.markdown("""
 def load_data():
     """Load app data"""
     try:
-        # Try to load from multiple possible locations
-        df = pd.read_csv('apps_with_features.csv')
+        # # Try to load from multiple possible locations
+        # df = pd.read_csv('apps_with_features.csv')
+        # Load data with sample for faster deployment
+        df = pd.read_csv('apps_with_features.csv', nrows=5000)  # Only load first 5000 rows
         return df
     except:
         try:
